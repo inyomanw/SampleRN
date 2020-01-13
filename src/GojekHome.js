@@ -9,6 +9,9 @@ import {
     Text,
     StatusBar,
     Image,
+    Button,
+    TouchableOpacity,
+    Touchable,
 } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
 
@@ -19,7 +22,7 @@ export default class GojekHome extends React.Component {
     render() {
         return(
             <View style={{flex : 1}}>
-                <View style={{backgroundColor:"white", flex : 1}}>
+                <ScrollView style={{backgroundColor:"white", flex : 1}}>
                     {/* searchBar */}
                     <View style={{marginHorizontal:17, marginTop:12, flexDirection:"row"}}>
                         <View style={{
@@ -153,7 +156,30 @@ export default class GojekHome extends React.Component {
                         </View>
 
                     </View>
-                </View>
+                    {/* end Of mainFeature */}
+                    <View style={{height:17, backgroundColor:'#F2F2F4', marginTop:20}}></View>
+                    {/* New Section */}
+                    <View style={{padding:16}}>
+                        {/* image banner */}
+                        <View style={{position:'relative'}}>
+                            <Image style={{height:200, width:'100%', borderRadius:7}} source={require('../dummy/sepak-bola.jpg')}/>
+                            <View style={{height:'100%', width:'100%', position:'absolute', top:0, left:0 , backgroundColor:'black', opacity:0.2, borderRadius:7}}/>
+                            <View style={{height:15, width:55, position:'absolute', top:16, left:16}}>
+                                <Image style={{width:undefined, height:undefined, resizeMode:'contain', flex: 1}} source={require('../logo/white.png')}/>
+                            </View>
+                    
+                        </View>
+                        {/* image title + desc */}
+                        <View style={{marginTop:16, paddingBottom:20, borderBottomColor:'#E8E9ED', borderBottomWidth:1}}>
+                            <Text style={{fontSize:16, fontWeight:'bold', color:'#1C1C1C'}}>GO-NEWS</Text>
+                            <Text style={{marginTop:4, fontSize:14, fontWeight:'normal', color:'#7A7A7A'}}>Dimas Drajat selamatkan penalti, Timnas U-23 Kalahkan Brunei </Text>
+                            <TouchableOpacity style={{backgroundColor:'#61A756', alignSelf:'flex-end', marginTop:11, padding:12, borderRadius:4}}>
+                                <Text style={{fontSize:13, color:'white', textAlign:'center'}}>READ</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+
+                </ScrollView>
 
 
                 {/* bottomNavBar */}
