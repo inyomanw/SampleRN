@@ -22,7 +22,7 @@ export default class GojekHome extends React.Component {
     render() {
         return(
             <View style={{flex : 1}}>
-                <ScrollView style={{backgroundColor:"white", flex : 1}}>
+                <ScrollView style={{backgroundColor:"white", flex : 1, paddingBottom:4}}>
                     {/* searchBar */}
                     <View style={{marginHorizontal:17, marginTop:12, flexDirection:"row"}}>
                         <View style={{
@@ -162,7 +162,7 @@ export default class GojekHome extends React.Component {
                     <View style={{padding:16}}>
                         {/* image banner */}
                         <View style={{position:'relative'}}>
-                            <Image style={{height:200, width:'100%', borderRadius:7}} source={require('../dummy/sepak-bola.jpg')}/>
+                            <Image style={{height:170, width:'100%', borderRadius:7}} source={require('../dummy/sepak-bola.jpg')}/>
                             <View style={{height:'100%', width:'100%', position:'absolute', top:0, left:0 , backgroundColor:'black', opacity:0.2, borderRadius:7}}/>
                             <View style={{height:15, width:55, position:'absolute', top:16, left:16}}>
                                 <Image style={{width:undefined, height:undefined, resizeMode:'contain', flex: 1}} source={require('../logo/white.png')}/>
@@ -176,6 +176,30 @@ export default class GojekHome extends React.Component {
                             <TouchableOpacity style={{backgroundColor:'#61A756', alignSelf:'flex-end', marginTop:11, padding:12, borderRadius:4}}>
                                 <Text style={{fontSize:13, color:'white', textAlign:'center'}}>READ</Text>
                             </TouchableOpacity>
+                        </View>
+                    </View>
+                    {/* End New Section */}
+                    {/* GO-FOOD BANNER SECTION */}
+                    <View style={{padding:16,  borderBottomColor:'#E8E9ED', borderBottomWidth:1, marginBottom:16}}>
+                        <View style={{position:'relative'}}>
+                            <Image style={{height:170, width:'100%', borderRadius:7}} source={require('../dummy/food-banner.jpg')}/>
+                            <View style={{height:'100%', width:'100%', position:'absolute', top:0, left:0 , backgroundColor:'black', opacity:0.1, borderRadius:7}}/>
+                            <View style={{height:15, width:55, position:'absolute', top:16, left:16}}>
+                                <Image style={{width:undefined, height:undefined, resizeMode:'contain', flex: 1}} source={require('../logo/white.png')}/>
+                            </View>
+                            <View style={{position:'absolute', bottom:0, left: 0, width:'100%', flexDirection:'row', alignItems:'center'}}>
+                                {/* untuk text bawah */}
+                                <View style={{marginLeft:16}}>
+                                    <Text style={{fontSize:18, fontWeight:'bold', color:'white'}}>Free GO-FOOD voucher</Text>
+                                    <Text style={{fontSize:12, fontWeight:'400', color:'white', marginTop:8}}>Quick, before they run </Text>
+                                </View>
+                                {/* untuk Button */}
+                                <View style={{marginBottom:8, marginRight:8, flex:1}}>
+                                    <TouchableOpacity style={{backgroundColor:'#61A756', alignSelf:'flex-end', marginTop:11, padding:12, borderRadius:4}}>
+                                        <Text style={{fontSize:13, color:'white', textAlign:'center'}}>GOFOOD</Text>
+                                    </TouchableOpacity>
+                                </View>
+                            </View>
                         </View>
                     </View>
 
