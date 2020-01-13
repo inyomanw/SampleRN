@@ -27,7 +27,7 @@ export default class GojekHome extends React.Component {
                     <View style={{marginHorizontal:17, marginTop:12, flexDirection:"row"}}>
                         <View style={{
                             position:"relative",
-                            marginHorizontal:17,
+                            marginRight:8,
                             flex:1}}>
 
                             <TextInput placeholder="What do you want to eat?" style={{
@@ -223,7 +223,16 @@ export default class GojekHome extends React.Component {
                             </View>
                         </View>
                     </View>
-
+                    {/* Nearby Gofood */}
+                    <View style={{padding:16}}>
+                        <View style={{height:15, width:55}}>
+                            <Image style={{width:undefined, height:undefined, resizeMode:'contain', flex: 1}} source={require('../logo/go-food.png')}/>
+                        </View>
+                        <View style={{flexDirection:"row", flex:1, justifyContent:'space-between', marginTop:8}}>
+                            <Text style={{fontSize:22, fontWeight:'bold', color:'#4A4A4A'}}>Nearby Restaurants</Text>
+                            <Text style={{fontSize:22, color:'#61A756'}}> See All</Text>
+                        </View>
+                    </View>
                 </ScrollView>
 
 
