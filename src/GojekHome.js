@@ -179,6 +179,27 @@ export default class GojekHome extends React.Component {
                         </View>
                     </View>
                     {/* End New Section */}
+                    {/* Internal Information Section*/}
+                    <View style={{padding:16}}>
+                        <View style={{height:15, width:55, marginLeft:-4}}>
+                            <Image style={{width:undefined, height:undefined, resizeMode:'contain', flex: 1}} source={require('../logo/gojek.png')}/>
+                        </View>
+                        <Text style={{marginTop:8, fontSize:17, fontWeight:'bold'}}>Complete your profile</Text>
+                        <View style={{flexDirection:'row', marginTop:16}}>
+                            <View>
+                                <Image source={require('../dummy/facebook-connect.png')}/>
+                            </View>
+                            <View style={{flex:1, marginLeft:16}}>
+                                <Text style={{fontSize:15, fontWeight:'bold', color:'#4A4A4A'}}>Connect With Facebook</Text>
+                                <Text style={{fontSize:15, width:'70%', fontWeight:'normal', color:'#4A4A4A'}}>login faster without verification code</Text>
+                            </View>
+                        </View>
+                        <TouchableOpacity style={{backgroundColor:'#61A756', alignSelf:'flex-end', marginTop:11, padding:12, borderRadius:4}}>
+                                <Text style={{fontSize:13, color:'white', textAlign:'center'}}>Connect</Text>
+                        </TouchableOpacity>
+                        <View style={{height:2, backgroundColor:'#F2F2F4', marginTop:20}}></View>
+                    </View>
+
                     {/* GO-FOOD BANNER SECTION */}
                     <View style={{padding:16,  borderBottomColor:'#E8E9ED', borderBottomWidth:1, marginBottom:16}}>
                         <View style={{position:'relative'}}>
