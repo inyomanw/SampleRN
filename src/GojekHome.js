@@ -238,31 +238,23 @@ export default class GojekHome extends React.Component {
 
                 {/* bottomNavBar */}
                 <View style={{height:54, backgroundColor:"white", flexDirection:"row"}}>
-                    <View style={{flex:1,alignItems:"center", justifyContent:"center"}}>
-                        <Image style={{width: 26, height: 26}} source={require('../icon/home-active.png')}/>
-                        <Text style={{fontSize:10, color:'#43AB4A', marginTop:4}}>Home</Text>
-                    </View>
-                    <View style={{flex:1, alignItems:"center", justifyContent:"center"}}>
-                        <Image style={{width: 26, height: 26}} source={require('../icon/order.png')}/>
-                        <Text style={{fontSize:10, color:'#545454', marginTop:4}}>Order</Text>
-                    </View>
-                    <View style={{flex:1, alignItems:"center", justifyContent:"center"}}>
-                        <Image style={{width: 26, height: 26}} source={require('../icon/help.png')}/>
-                        <Text style={{fontSize:10, color:'#545454', marginTop:4}}>Help</Text>
-                    </View>
-                    <View style={{flex:1, alignItems:"center", justifyContent:"center"}}>
-                        <Image style={{width: 26, height: 26}} source={require('../icon/inbox.png')}/>
-                        <Text style={{fontSize:10, color:'#545454'}}>Inbox</Text>
-                    </View>
-                    <View style={{flex:1, alignItems:"center", justifyContent:"center"}}>
-                        <Image style={{width: 26, height: 26}} source={require('../icon/account.png')}/>
-                        <Text style={{fontSize:10, color:'#545454', marginTop:4}}>Account</Text>
-                    </View>
+                    <BottomMenu title={'Home'} source={require('../icon/home-active.png')} />
+                    <BottomMenu title={'Order'} source={require('../icon/order.png')} />
+                    <BottomMenu title={'Help'} source={require('../icon/help.png')} />
+                    <BottomMenu title={'Inbox'} source={require('../icon/inbox.png')} />
+                    <BottomMenu title={'Account'} source={require('../icon/account.png')} />
                 </View>
             </View>
         );
     }
 }
+
+const BottomMenu = props =>(
+    <View style={{flex:1, alignItems:"center", justifyContent:"center"}}>
+        <Image style={{width: 26, height: 26}} source={props.source}/>
+        <Text style={{fontSize:10, color:'#545454', marginTop:4}}>{props.title}</Text>
+    </View>
+)
 
 const style = StyleSheet.create({
 
