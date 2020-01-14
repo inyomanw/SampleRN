@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import { FlatList, ActivityIndicator, Text, View  } from 'react-native';
 
@@ -5,25 +6,45 @@ export default class FetchExample extends React.Component {
 
   constructor(props){
     super(props);
-    this.state ={ isLoading: true}
+    this.state = { isLoading: true}
+    this.axios = require('axios')
   }
 
-  componentDidMount(){
-    return fetch('https://jsonplaceholder.typicode.com/users')
-      .then((response) => response.json())
-      .then((responseJson) => {
-        console.log(responseJson)
-        this.setState({
-          isLoading: false,
-          dataSource: responseJson,
-        }, function(){
+//   componentDidMount(){
+//     return fetch('https://jsonplaceholder.typicode.com/users')
+//       .then((response) => response.json())
+//       .then((responseJson) => {
+//         console.log(responseJson)
+//         this.setState({
+//           isLoading: false,
+//           dataSource: responseJson,
+//         }, function(){
 
-        });
+//         });
 
-      })
-      .catch((error) =>{
-        console.error(error);
+//       })
+//       .catch((error) =>{
+//         console.error(error);
+//       });
+//   }
+
+  componentDidMount() {
+    this.axios.get('https://jsonplaceholder.typicode.com/users')
+    .then(function (response) {
+      // handle success
+      console.log(response);
+      this.setState({
+        isLoading: false,
+        dataSource: response,
       });
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    })
+    .finally(function () {
+      // always executed
+    });
   }
 
   render(){
