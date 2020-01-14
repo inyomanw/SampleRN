@@ -13,7 +13,7 @@ import {
     TouchableOpacity,
     Touchable,
 } from 'react-native';
-import { TextInput } from 'react-native-gesture-handler';
+import { TextInput, FlatList } from 'react-native-gesture-handler';
 
 export default class GojekHome extends React.Component {
     static navigationOptions = {
@@ -49,7 +49,7 @@ export default class GojekHome extends React.Component {
                                       backgroundColor:'#2C5FB8', padding:14,
                                       borderTopLeftRadius:6, borderTopRightRadius:6}}>
                             <Image source={require('../icon/gopay.png')} />
-                            <Text style={{fontSize: 17, color:'white', marginRight:12, fontWeight:'bold'}}>Rp 50.000</Text>
+                            <Text style={{fontSize: 17, color:'white', marginRight:12, fontWeight:'bold'}}>Rp 50.000.000</Text>
                         </View>
 
                         {/* icon bawah */}
@@ -232,10 +232,16 @@ export default class GojekHome extends React.Component {
                             <Text style={{fontSize:22, fontWeight:'bold', color:'#4A4A4A'}}>Nearby Restaurants</Text>
                             <Text style={{fontSize:22, color:'#61A756'}}> See All</Text>
                         </View>
+                        {/* <SafeAreaView > */}
+                            <FlatList style={{marginTop:8}}
+                                data={GofoodNearBy}
+                                horizontal={true}
+                                renderItem={({ item }) => <GofoodViewHolder title={item.title} source={item.source} />}
+                                keyExtractor= {item => item.id}
+                            />
+                        {/* </SafeAreaView> */}
                     </View>
                 </ScrollView>
-
-
                 {/* bottomNavBar */}
                 <View style={{height:54, backgroundColor:"white", flexDirection:"row"}}>
                     <BottomMenu title={'Home'} source={require('../icon/home-active.png')} />
@@ -249,10 +255,42 @@ export default class GojekHome extends React.Component {
     }
 }
 
+const GofoodNearBy = [
+    {
+      id: '1',
+      title: 'Bakmi GM',
+      source: require('../dummy/go-food-gm.jpg'),
+    },
+    {
+      id: '2',
+      title: 'KFC',
+      source: require('../dummy/go-food-kfc.jpg'),
+    },
+    {
+      id: '3',
+      title: 'Orins',
+      source: require('../dummy/go-food-orins.jpg'),
+    },
+    {
+        id: '4',
+        title: 'Pak Bos',
+        source: require('../dummy/go-food-pak-boss.jpg'),
+      },
+  ];
+
 const BottomMenu = props =>(
     <View style={{flex:1, alignItems:"center", justifyContent:"center"}}>
         <Image style={{width: 26, height: 26}} source={props.source}/>
         <Text style={{fontSize:10, color:'#545454', marginTop:4}}>{props.title}</Text>
+    </View>
+)
+
+const GofoodViewHolder = props =>(
+    <View style={{marginRight:12}}>
+        <View>
+            <Image style={{width:150, height:150, borderRadius:8}} source={props.source}/>
+        </View>
+        <Text style={{marginTop:8, fontSize:16, fontWeight:'bold'}}>{props.title}</Text>
     </View>
 )
 
