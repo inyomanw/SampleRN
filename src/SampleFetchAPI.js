@@ -1,6 +1,7 @@
 /* eslint-disable */
 import React from 'react';
 import { FlatList, ActivityIndicator, Text, View  } from 'react-native';
+// import axios from 'axios';
 
 export default class FetchExample extends React.Component {
 
@@ -30,20 +31,17 @@ export default class FetchExample extends React.Component {
 
   componentDidMount() {
     this.axios.get('https://jsonplaceholder.typicode.com/users')
-    .then(function (response) {
-      // handle success
-      console.log(response);
-      this.setState({
-        isLoading: false,
-        dataSource: response,
-      });
+    .then(response => {
+        // handle success
+        console.log(response);
+        this.setState({
+            isLoading: false,
+            dataSource: response.data,
+        });
     })
-    .catch(function (error) {
-      // handle error
-      console.log(error);
-    })
-    .finally(function () {
-      // always executed
+    .catch(error => {
+        // handle error
+        console.log(error);
     });
   }
 
