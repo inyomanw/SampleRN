@@ -34,6 +34,9 @@ import GojekHome from './src/GojekHome'
 import FlatListSimple from './src/flatlist/flatlist-simple'
 import FlatListSelected from './src/flatlist/FlatListSelectable'
 import SampleFetchApi from './src/SampleFetchAPI'
+import FoodForm from './src/foodForm'
+import FoodList from './src/foodList'
+import SampleRedux from './redux/App'
 
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
@@ -48,9 +51,12 @@ const RootStack = createStackNavigator(
     FlatListSimple: FlatListSimple,
     FlatListSelected: FlatListSelected,
     SampleFetchApi: SampleFetchApi,
+    FoodForm: FoodForm,
+    FoodList: FoodList,
+    SampleRedux: SampleRedux
   },
   {
-    initialRouteName: 'HomeGojek',
+    initialRouteName: 'FoodList',
   }
 );
 

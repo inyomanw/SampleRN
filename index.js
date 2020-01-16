@@ -23,8 +23,9 @@ const store = configureStore();
 
 const RNRedux = () => (
   <Provider store={store}>
-    <AppRedux />
+    <App />
+    {/* <AppRedux /> */}
   </Provider>
 );
 
-AppRegistry.registerComponent(appName, () => App);
+AppRegistry.registerComponent(appName, () => RNRedux);
