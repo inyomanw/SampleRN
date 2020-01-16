@@ -1,3 +1,4 @@
+/* eslint-disable */
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
@@ -49,7 +50,7 @@ const RootStack = createStackNavigator(
     SampleFetchApi: SampleFetchApi,
   },
   {
-    initialRouteName: 'SampleFetchApi',
+    initialRouteName: 'HomeGojek',
   }
 );
 
